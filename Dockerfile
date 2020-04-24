@@ -1,7 +1,5 @@
-FROM google/cloud-sdk:alpine
-RUN apk add --update --no-cache openjdk8-jre && \
-    gcloud components install cloud-firestore-emulator beta --quiet
-COPY start-firestore /start-firestore
-RUN chmod +x /start-firestore
-EXPOSE 8081
-ENTRYPOINT [ "/start-firestore" ]
+FROM docker:stable
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

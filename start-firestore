@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Check user environment variable
 if [[ -z "${INPUT_FIRESTOREPROJECTID}" ]]; then
@@ -6,8 +6,5 @@ if [[ -z "${INPUT_FIRESTOREPROJECTID}" ]]; then
   exit 1
 fi
 
-# Config gcloud project
-gcloud config set project ${INPUT_FIRESTOREPROJECTID}
-
-# Start emulator
-gcloud beta emulators firestore start --host-port=localhost:8081 &>/dev/null &
+docker_run="docker run"
+docker_run="$docker_run -d -p 8081:8081 -e INPUT_FIRESTOREPROJECTID:$INPUT_FIRESTOREPROJECTID" docker.pkg.github.com/mickfeech/firestore-emulator/firestore-emulator:master
