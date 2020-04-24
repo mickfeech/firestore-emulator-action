@@ -1,0 +1,13 @@
+name: Firestore Emulator
+author: mickfeech
+description: Starts a Firestore backend emulator
+inputs:
+  fireStoreProjectID:
+    description: "The ID of the Google Cloud project for the emulator"
+    required: true
+run:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "database"
+  color: "blue"
