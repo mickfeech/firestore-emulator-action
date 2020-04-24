@@ -6,5 +6,4 @@ if [[ -z "${INPUT_FIRESTOREPROJECTID}" ]]; then
   exit 1
 fi
 
-docker_run="docker run"
-docker_run="$docker_run -d -p 8081:8081 -e INPUT_FIRESTOREPROJECTID:$INPUT_FIRESTOREPROJECTID mickfeech/firestore-emulator:latest"
+docker run --name firestore --publish 8081:8081 -e INPUT_FIRESTOREPROJECTID=$INPUT_FIRESTOREPROJECTID --detach mickfeech/firestore-emulator:latest
