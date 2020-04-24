@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # Check user environment variable
-if [[ -z "${FIRESTOREPROJECTID}" ]]; then
+if [[ -z "${INPUT_FIRESTOREPROJECTID}" ]]; then
   echo "Missing FIRESTOREPROJECTID environment variable" >&2
   exit 1
 fi
 
 # Config gcloud project
-gcloud config set project ${FIRESTOREPROJECTID}
+gcloud config set project ${INPUT_FIRESTOREPROJECTID}
 
 # Start emulator
 gcloud beta emulators firestore start --host-port=localhost:8081
