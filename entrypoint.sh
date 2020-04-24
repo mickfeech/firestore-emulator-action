@@ -7,4 +7,4 @@ if [[ -z "${INPUT_FIRESTOREPROJECTID}" ]]; then
 fi
 
 docker_run="docker run"
-docker_run="$docker_run -d -p 8081:8081 -e INPUT_FIRESTOREPROJECTID:$INPUT_FIRESTOREPROJECTID" docker.pkg.github.com/mickfeech/firestore-emulator/firestore-emulator:master
+docker_run="$docker_run -d -p 8081:8081 -e INPUT_FIRESTOREPROJECTID:$INPUT_FIRESTOREPROJECTID" mickfeech/firestore-emulator
