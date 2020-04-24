@@ -6,7 +6,7 @@ Creates a backend Firestore emulator for testing purposes
 
 ### Example workflow file
 
-```
+```yaml
 name: Run tests
 
 on: [push]
