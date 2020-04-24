@@ -5,7 +5,7 @@ inputs:
   fireStoreProjectID:
     description: "The ID of the Google Cloud project for the emulator"
     required: true
-run:
+runs:
   using: "docker"
   image: "Dockerfile"
 branding:
