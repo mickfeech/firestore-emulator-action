@@ -10,4 +10,4 @@ fi
 gcloud config set project ${INPUT_FIRESTOREPROJECTID}
 
 # Start emulator
-gcloud beta emulators firestore start --host-port=localhost:8081
+gcloud beta emulators firestore start --host-port=localhost:8081 &>/dev/null &
