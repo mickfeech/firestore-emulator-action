@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v2
     
     - name: Start Firestore
-      uses: mickfeech/firestore-emulator-action@0.0.3
+      uses: mickfeech/firestore-emulator-action@0.0.12
       with: 
         fireStoreProjectID: project-test
 ```
